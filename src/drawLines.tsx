@@ -156,6 +156,7 @@ class DrawLines extends React.Component<DrawLinesProps, DrawLinesState> {
     _.remove(relation, (n) => {
       return n === item;
     });
+    // this.props.onChangeCurrentRelation(item)
     relation.push(item);
     this.props.onChange(relation, false);
   }

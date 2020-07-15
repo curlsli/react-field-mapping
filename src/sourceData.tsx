@@ -70,9 +70,6 @@ class SourceData extends React.Component<XDataProps, XDataState> {
   }
 
   eventHandle(item, type, activeKey): void {
-
-    console.log( item, type, activeKey )
-
     if (!this.state.sorting) {
       this.setState({
         activeKey,

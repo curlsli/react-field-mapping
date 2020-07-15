@@ -103,6 +103,7 @@ body {
             .column-icon {
               &:before {
                 visibility: inherit!important;
+                // background-color: #0abf5b;
               }
               &.sorting {
                 visibility: hidden!important;
@@ -156,11 +157,11 @@ body {
         }
         &.path-end:hover,
         &.path-end.active {
-          fill: #0abf5b;
+          fill: rgba(0, 110, 255, .3);
           cursor: pointer;
           .line {
-            stroke: #0abf5b ;
-            stroke-width: 1px;
+            stroke: rgba(0, 110, 255, .3);
+            stroke-width: 2px;
           }
           .icon-remove {
             opacity: 1;
@@ -170,7 +171,7 @@ body {
           cursor: initial;
           .line {
             stroke: #006EFF;
-            stroke-width: 2px;
+            stroke-width: 1px;
           }
           .icon-remove {
             opacity: 0;

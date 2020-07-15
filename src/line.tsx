@@ -38,11 +38,11 @@ class Line extends React.Component<LineProps, null> {
       onMouseOver={this.mouseOver.bind(edit)}
       onClick={this.removeHandle.bind(edit)}
     >
-      <circle className="line-circle line-circle-start" cx={`${startX}`} cy={`${startY}`} r="6"/>
+      {/* <circle className="line-circle line-circle-start" cx={`${startX}`} cy={`${startY}`} r="6"/> */}
       <path
         className="line"
         d={`M${startX}, ${startY} L${endX}, ${endY}`}
-        markerEnd="url(#markerArrow)"
+        // markerEnd="url(#markerArrow)"
       />
       <image
         className="icon-remove"
@@ -51,7 +51,7 @@ class Line extends React.Component<LineProps, null> {
         width={iconSize[0]}
         height={iconSize[1]}
         xlinkHref={closeIcon || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0iIzg4OCIgZD0iTTEzLjk1IDMuNDE0TDEyLjUzNiAyIDggNi41MzYgMy40NjQgMiAyLjA1IDMuNDE0IDYuNTg2IDcuOTUgMi4wNSAxMi40ODVsMS40MTQgMS40MTRMOCA5LjM2NGw0LjUzNiA0LjUzNSAxLjQxNC0xLjQxNEw5LjQxNCA3Ljk1eiIvPjwvc3ZnPg=="} />
-        <circle className="line-circle line-circle-end" cx={`${endX}`} cy={`${endY}`} r="6"/>
+        {/* <circle className="line-circle line-circle-end" cx={`${endX}`} cy={`${endY}`} r="6"/> */}
     </g>;
   }
 }
