@@ -93,16 +93,6 @@ class FieldMapping extends React.Component<FieldMappingProps, FieldMappingState>
     });
   }
 
-  /**
-   * 设置当前active的relation
-   * @param relation
-   */
-  onChangeCurrentRelation(relation): void {
-    this.setState({
-      currentRelation: relation
-    });
-  }
-
   changeSource(oldIndex, newIndex): void {
     const {
       source: {
@@ -197,7 +187,6 @@ class FieldMapping extends React.Component<FieldMappingProps, FieldMappingState>
       currentRelation,
       onChange: this.changeRelation.bind(this),
       changeIconStatus: this.changeIconStatus.bind(this),
-      onChangeCurrentRelation: this.onChangeCurrentRelation.bind(this),
     };
     return <div style={style} className={`react-field-mapping-box ${className}`}>
       <SourceData {...sourceOpt} />

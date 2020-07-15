@@ -112,5 +112,4 @@ export interface LineProps {
   currentRelation: OneRelation;
   removeRelation: (item: OneRelation) => void;
   closeIcon: string;
-  onChangeCurrentRelation: (item: OneRelation) => void;
 }
