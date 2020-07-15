@@ -20,6 +20,7 @@ class Columns extends React.Component<ColumnsProps, null> {
 
   render(): React.ReactElement {
     const { item, index, columnOpt, sorting, columns, type, edit } = this.props;
+
     return <li {...columnOpt(item, index)} >
       {
         columns.map((column, idx) => {
@@ -41,7 +42,8 @@ class Columns extends React.Component<ColumnsProps, null> {
           );
         })
       }
-      <div style={{visibility: edit && item.iconShow}} className={`column-icon ${type}-column-icon ${sorting ? "sorting" : ""} ${edit ? "" : "disabled"}`} />
+      {/* <div style={{visibility: edit && item.iconShow}} className={`column-icon ${type}-column-icon ${sorting ? "sorting" : ""} ${edit ? "" : "disabled"}`} /> */}
+      <div className={`column-icon ${type}-column-icon ${sorting ? "sorting" : ""} ${edit ? "" : "disabled"} ${item.iconShow == 'inherit' ? 'circle-show' : ''}`} />
     </li>;
   }
 }

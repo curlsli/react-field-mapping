@@ -46,7 +46,7 @@ class TargetData extends React.Component<XDataProps, XDataState> {
   }
   show(data, relation, iconStatus): DataTypes[] {
     return data.map(item => {
-      let iconShow = iconStatus ? 'inherit' : 'hidden';
+      let iconShow =  iconStatus ? 'inherit' : 'hidden';
       relation.map(n => {
         if ((n.target && n.target.key) === item.key) {
           iconShow = 'inherit';

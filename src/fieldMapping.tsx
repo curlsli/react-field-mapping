@@ -63,6 +63,10 @@ class FieldMapping extends React.Component<FieldMappingProps, FieldMappingState>
   }
 
   changeRelation(relation, isUpdate = true): void {
+
+    console.log( 444 )
+    console.log( relation )
+
     this.setState({
       relation
     }, () => {
@@ -161,7 +165,7 @@ class FieldMapping extends React.Component<FieldMappingProps, FieldMappingState>
     };
     const targetOpt = {
       ref: (me): void => {this.targetCom = me;},
-      iconStatus,
+      iconStatus: null,
       relation,
       columns: targetCols,
       data: targetData,
