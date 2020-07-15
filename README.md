@@ -1,3 +1,4 @@
+# wedata
 # react-field-mapping
 
 [![npm version](https://img.shields.io/npm/v/react-field-mapping.svg?style=flat)](https://www.npmjs.com/package/react-field-mapping)
@@ -6,7 +7,6 @@
 [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/zsjjs/react-field-mapping/master/LICENSE)
 
 #### 关系映射组件
-
 ### View the <a href="https://codepen.io/godIsMe/pen/xvgYdx">Demo</a> and its <a href="https://github.com/zsjjs/react-field-mapping/blob/master/example/test.js">source</a> for more.
 
 使用中需要注意的一点是relation，是由组件内部控制的，所以是不受控的，连线后组件内部relation改变，连线也是组件内部控制。但是外部传入的relation是可以改变内部的relation，在组件内会监听传入的relation，可以在onChange的时候改变传入的relation，来达到受控的效果，如果onChange的时候不改变传入的relation，那么relation就是defaultRelation的效果。
