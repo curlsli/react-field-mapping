@@ -5,7 +5,7 @@ import React from 'react';
 import Sortable from 'sortablejs';
 import Columns from './Columns';
 import { XDataProps, XDataState, DataTypes } from './types';
-import { act } from 'react-dom/test-utils';
+// import { act } from 'react-dom/test-utils';
 
 class SourceData extends React.Component<XDataProps, XDataState> {
   boxEle: Element;

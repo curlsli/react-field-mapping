@@ -83,58 +83,67 @@ class DrawLines extends React.Component<DrawLinesProps, DrawLinesState> {
           scrollLeft += scrollEle.scrollLeft;
           scrollEle = scrollEle.parentElement;
         }
-      }
-    };
-    document.documentElement.onmousemove = (event): void => {
-      if (this.state.drawing) {
-        this.props.onDrawing(this.state.sourceData, this.props.relation);
-        this.setState({
-          endX: event.pageX - this.baseXY.left + scrollLeft,
-          endY: event.pageY - this.baseXY.top + scrollTop
-        });
-      }
-    };
-    document.documentElement.onmouseup = (event): void => {
-      document.body.classList.remove("user-select-none");
-      const { startX, startY, sourceData } = this.state;
-      const eventDom = event.target as unknown as HTMLElement;
-      const className = eventDom && eventDom.className || '';
-      if (className && typeof className === "string" && className.indexOf("target-column-icon") > -1) {
-        const relation = _.assign([], this.props.relation);
-        if (!this.props.targetMutiple && _.find(relation, (o) => {// target不允许映射多次
-          return o.target.key === this.domOperate(eventDom).key;
-        }) || _.find(relation, (o) => { // 过滤连线已存在的情况
-          return o.target.key === this.domOperate(eventDom).key && o.source.key === this.domOperate(sourceDom).key;
-        })) {
+
+
+        document.documentElement.onmousemove = (event): void => {
+          if (this.state.drawing) {
+            this.props.onDrawing(this.state.sourceData, this.props.relation);
+            this.setState({
+              endX: event.pageX - this.baseXY.left + scrollLeft,
+              endY: event.pageY - this.baseXY.top + scrollTop
+            });
+          }
+        };
+        document.documentElement.onmouseup = (event): void => {
+          document.body.classList.remove("user-select-none");
+          const { startX, startY, sourceData } = this.state;
+          const eventDom = event.target as unknown as HTMLElement;
+          const className = eventDom && eventDom.className || '';
+          if (className && typeof className === "string" && className.indexOf("target-column-icon") > -1) {
+            const relation = _.assign([], this.props.relation);
+            if (!this.props.targetMutiple && _.find(relation, (o) => {// target不允许映射多次
+              return o.target.key === this.domOperate(eventDom).key;
+            }) || _.find(relation, (o) => { // 过滤连线已存在的情况
+              return o.target.key === this.domOperate(eventDom).key && o.source.key === this.domOperate(sourceDom).key;
+            })) {
+              this.props.changeIconStatus();
+              this.setState({...defaultState});
+              sourceDom = null;
+              return;
+            }
+            const targetData = _.find(this.props.targetData, (o) => {
+              return o.key === this.domOperate(eventDom).key;
+            });
+            relation.push({
+              source: {
+                x: startX,
+                y: startY,
+                ...sourceData
+              },
+              target: {
+                x: this.domOperate(eventDom).left,
+                y: this.domOperate(eventDom).top,
+                ...targetData
+              }
+            });
+            this.props.onDrawEnd(sourceData, targetData, relation);
+            this.props.onChange(relation);
+            sourceDom = null;
+          }
           this.props.changeIconStatus();
           this.setState({...defaultState});
-          sourceDom = null;
-          return;
-        }
-        const targetData = _.find(this.props.targetData, (o) => {
-          return o.key === this.domOperate(eventDom).key;
-        });
-        relation.push({
-          source: {
-            x: startX,
-            y: startY,
-            ...sourceData
-          },
-          target: {
-            x: this.domOperate(eventDom).left,
-            y: this.domOperate(eventDom).top,
-            ...targetData
-          }
-        });
-        this.props.onDrawEnd(sourceData, targetData, relation);
-        this.props.onChange(relation);
-        sourceDom = null;
+          scrollTop = 0;
+          scrollLeft = 0;
+  
+          document.documentElement.onmousemove = null;
+          document.documentElement.onmouseup = null;
+  
+        };
+
       }
-      this.props.changeIconStatus();
-      this.setState({...defaultState});
-      scrollTop = 0;
-      scrollLeft = 0;
+
     };
+    
   }
 
   domOperate(eventDom): DomOperateTypes {
