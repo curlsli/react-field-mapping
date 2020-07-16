@@ -131,7 +131,7 @@ class App extends React.PureComponent {
         });
       },
       isSort: true,
-      edit: true,
+      edit: false,
 
     };
     return <div>

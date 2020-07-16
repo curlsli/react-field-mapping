@@ -205,7 +205,7 @@ class DrawLines extends React.Component<DrawLinesProps, DrawLinesState> {
             removeRelation={this.removeRelation}
           />)}
         </g>
-        {drawing && <g className="path">
+        {edit && drawing && <g className="path">
             <path
               className="line"
               d={`M${startX}, ${startY} L${endX}, ${endY}`}
