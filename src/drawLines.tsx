@@ -154,6 +154,7 @@ class DrawLines extends React.Component<DrawLinesProps, DrawLinesState> {
     };
   }
   removeRelation = (removeNode): void => {
+    if(!this.props.edit) return;
     const relation = _.assign([], this.props.relation);
     _.remove(relation, item => {
       return (item === removeNode);

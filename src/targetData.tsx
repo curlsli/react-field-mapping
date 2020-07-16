@@ -67,6 +67,7 @@ class TargetData extends React.Component<XDataProps, XDataState> {
   }
 
   eventHandle(item, type, activeKey): void {
+    if(!this.props.edit)  return;
     if (!this.state.sorting) {
       this.setState({
         activeKey,

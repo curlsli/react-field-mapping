@@ -130,7 +130,8 @@ class App extends React.PureComponent {
           relation
         });
       },
-      isSort: true
+      isSort: true,
+      edit: true,
 
     };
     return <div>
