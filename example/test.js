@@ -94,46 +94,47 @@ class App extends React.PureComponent {
   }
   render() {
     const { sourceData, targetData } = this.state;
-    const option = {
-      source: {
-        data: sourceData,
-        onChange: (data) => { // isSort开启后，必须开启才会生效
-          this.setState({
-            sourceData: data
-          });
-        },
-        columns: sourceCols,
-        mutiple: true
-      },
-      target: {
-        data: targetData,
-        onChange: (data) => {
-          this.setState({
-            targetData: data
-          });
-        },
-        columns: targetCols,
-        mutiple: true
-      },
-      relation: this.state.relation,
-      // onDrawStart: (source, relation) => {
-      //   console.log("onDrawStart: ", source, relation);
-      // },
-      // onDrawing: (source, relation) => {
-      //   console.log("onDrawing: ", source, relation);
-      // },
-      // onDrawEnd: (source, target, relation) => {
-      //   console.log("onDrawEnd: ", source, relation);
-      // },
-      onChange: (relation) => {
-        this.setState({
-          relation
-        });
-      },
-      isSort: true,
-      edit: false,
+    // const option = {
+    //   source: {
+    //     data: sourceData,
+    //     onChange: (data) => { // isSort开启后，必须开启才会生效
+    //       this.setState({
+    //         sourceData: data
+    //       });
+    //     },
+    //     columns: sourceCols,
+    //     mutiple: true
+    //   },
+    //   target: {
+    //     data: targetData,
+    //     onChange: (data) => {
+    //       this.setState({
+    //         targetData: data
+    //       });
+    //     },
+    //     columns: targetCols,
+    //     mutiple: true
+    //   },
+    //   relation: this.state.relation,
+    //   // onDrawStart: (source, relation) => {
+    //   //   console.log("onDrawStart: ", source, relation);
+    //   // },
+    //   // onDrawing: (source, relation) => {
+    //   //   console.log("onDrawing: ", source, relation);
+    //   // },
+    //   // onDrawEnd: (source, target, relation) => {
+    //   //   console.log("onDrawEnd: ", source, relation);
+    //   // },
+    //   onChange: (relation) => {
+    //     this.setState({
+    //       relation
+    //     });
+    //   },
+    //   isSort: true,
+    //   edit: false,
 
-    };
+    // };
+    const option = {"source":{"data":[{"name":"TBL_ID","type":"bigint(20)","comment":"","key":"source-TBL_ID","iconShow":"inherit"},{"name":"CREATE_TIME","type":"int(11)","comment":"","key":"source-CREATE_TIME","iconShow":"inherit"},{"name":"DB_ID","type":"bigint(20)","comment":"","key":"source-DB_ID","iconShow":"inherit"},{"name":"LAST_ACCESS_TIME","type":"int(11)","comment":"","key":"source-LAST_ACCESS_TIME","iconShow":"inherit"},{"name":"OWNER","type":"varchar(767)","comment":"","key":"source-OWNER","iconShow":"inherit"},{"name":"OWNER_TYPE","type":"varchar(10)","comment":"","key":"source-OWNER_TYPE","iconShow":"inherit"},{"name":"RETENTION","type":"int(11)","comment":"","key":"source-RETENTION","iconShow":"inherit"},{"name":"SD_ID","type":"bigint(20)","comment":"","key":"source-SD_ID","iconShow":"inherit"},{"name":"TBL_NAME","type":"varchar(256)","comment":"","key":"source-TBL_NAME","iconShow":"inherit"},{"name":"TBL_TYPE","type":"varchar(128)","comment":"","key":"source-TBL_TYPE","iconShow":"inherit"},{"name":"VIEW_EXPANDED_TEXT","type":"mediumtext","comment":"","key":"source-VIEW_EXPANDED_TEXT","iconShow":"inherit"},{"name":"VIEW_ORIGINAL_TEXT","type":"mediumtext","comment":"","key":"source-VIEW_ORIGINAL_TEXT","iconShow":"inherit"},{"name":"IS_REWRITE_ENABLED","type":"bit(1)","comment":"","key":"source-IS_REWRITE_ENABLED","iconShow":"inherit"}],"columns":[{"title":"来源表字段","key":"name","width":"50%"},{"title":"类型","key":"type","width":"50%"}]},"target":{"data":[{"name":"TBL_ID","type":"BIGINT","comment":null,"key":"target-TBL_ID","iconShow":"inherit"},{"name":"CREATE_TIME","type":"BIGINT","comment":null,"key":"target-CREATE_TIME","iconShow":"inherit"},{"name":"DB_ID","type":"BIGINT","comment":null,"key":"target-DB_ID","iconShow":"inherit"},{"name":"LAST_ACCESS_TIME","type":"BIGINT","comment":null,"key":"target-LAST_ACCESS_TIME","iconShow":"inherit"},{"name":"OWNER","type":"VARCHAR","comment":null,"key":"target-OWNER","iconShow":"inherit"},{"name":"OWNER_TYPE","type":"VARCHAR","comment":null,"key":"target-OWNER_TYPE","iconShow":"inherit"},{"name":"RETENTION","type":"BIGINT","comment":null,"key":"target-RETENTION","iconShow":"inherit"},{"name":"SD_ID","type":"BIGINT","comment":null,"key":"target-SD_ID","iconShow":"inherit"},{"name":"TBL_NAME","type":"VARCHAR","comment":null,"key":"target-TBL_NAME","iconShow":"inherit"},{"name":"TBL_TYPE","type":"VARCHAR","comment":null,"key":"target-TBL_TYPE","iconShow":"inherit"},{"name":"VIEW_EXPANDED_TEXT","type":"VARCHAR","comment":null,"key":"target-VIEW_EXPANDED_TEXT","iconShow":"inherit"},{"name":"VIEW_ORIGINAL_TEXT","type":"VARCHAR","comment":null,"key":"target-VIEW_ORIGINAL_TEXT","iconShow":"inherit"},{"name":"IS_REWRITE_ENABLED","type":"VARCHAR","comment":null,"key":"target-IS_REWRITE_ENABLED","iconShow":"inherit"}],"columns":[{"title":"目标表字段","key":"name","width":"50%"},{"title":"类型","key":"type","width":"50%"}]},"relation":[{"source":{"name":"TBL_ID","type":"bigint(20)","key":"source-TBL_ID","x":270,"y":59},"target":{"iconShow":"hidden","x":-417,"name":"TBL_ID","y":-568,"type":"BIGINT","key":"target-TBL_ID"}},{"source":{"name":"CREATE_TIME","type":"int(11)","key":"source-CREATE_TIME","x":270,"y":98},"target":{"iconShow":"hidden","x":-417,"name":"CREATE_TIME","y":-568,"type":"BIGINT","key":"target-CREATE_TIME"}},{"source":{"name":"DB_ID","type":"bigint(20)","key":"source-DB_ID","x":270,"y":137},"target":{"iconShow":"hidden","x":-417,"name":"DB_ID","y":-568,"type":"BIGINT","key":"target-DB_ID"}},{"source":{"name":"LAST_ACCESS_TIME","type":"int(11)","key":"source-LAST_ACCESS_TIME","x":270,"y":176},"target":{"iconShow":"hidden","x":-417,"name":"LAST_ACCESS_TIME","y":-568,"type":"BIGINT","key":"target-LAST_ACCESS_TIME"}},{"source":{"name":"OWNER","type":"varchar(767)","key":"source-OWNER","x":270,"y":215},"target":{"iconShow":"hidden","x":-417,"name":"OWNER","y":-568,"type":"VARCHAR","key":"target-OWNER"}},{"source":{"name":"OWNER_TYPE","type":"varchar(10)","key":"source-OWNER_TYPE","x":270,"y":254},"target":{"iconShow":"hidden","x":-417,"name":"OWNER_TYPE","y":-568,"type":"VARCHAR","key":"target-OWNER_TYPE"}},{"source":{"name":"RETENTION","type":"int(11)","key":"source-RETENTION","x":270,"y":293},"target":{"iconShow":"hidden","x":-417,"name":"RETENTION","y":-568,"type":"BIGINT","key":"target-RETENTION"}},{"source":{"name":"SD_ID","type":"bigint(20)","key":"source-SD_ID","x":270,"y":332},"target":{"iconShow":"hidden","x":-417,"name":"SD_ID","y":-568,"type":"BIGINT","key":"target-SD_ID"}},{"source":{"name":"TBL_NAME","type":"varchar(256)","key":"source-TBL_NAME","x":270,"y":371},"target":{"iconShow":"hidden","x":-417,"name":"TBL_NAME","y":-568,"type":"VARCHAR","key":"target-TBL_NAME"}},{"source":{"name":"TBL_TYPE","type":"varchar(128)","key":"source-TBL_TYPE","x":270,"y":410},"target":{"iconShow":"hidden","x":-417,"name":"TBL_TYPE","y":-568,"type":"VARCHAR","key":"target-TBL_TYPE"}},{"source":{"name":"VIEW_EXPANDED_TEXT","type":"mediumtext","key":"source-VIEW_EXPANDED_TEXT","x":270,"y":449},"target":{"iconShow":"hidden","x":-417,"name":"VIEW_EXPANDED_TEXT","y":-568,"type":"VARCHAR","key":"target-VIEW_EXPANDED_TEXT"}},{"source":{"name":"VIEW_ORIGINAL_TEXT","type":"mediumtext","key":"source-VIEW_ORIGINAL_TEXT","x":270,"y":488},"target":{"iconShow":"hidden","x":-417,"name":"VIEW_ORIGINAL_TEXT","y":-568,"type":"VARCHAR","key":"target-VIEW_ORIGINAL_TEXT"}},{"source":{"name":"IS_REWRITE_ENABLED","type":"bit(1)","key":"source-IS_REWRITE_ENABLED","x":270,"y":527},"target":{"iconShow":"hidden","x":-417,"name":"IS_REWRITE_ENABLED","y":-568,"type":"VARCHAR","key":"target-IS_REWRITE_ENABLED"}}],"isSort":false,"edit":false}
     return <div>
       <div>
         <div style={{
