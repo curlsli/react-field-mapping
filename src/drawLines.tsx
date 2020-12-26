@@ -1,6 +1,3 @@
-/* @author yanjun.zsj
- * @date 2018.11
-*/
 import React from 'react';
 import { getOffset } from './util';
 import Line from './line';

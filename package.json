@@ -19,12 +19,12 @@
     "table",
     "mapping"
   ],
-  "homepage": "https://github.com/zsjjs/react-field-mapping",
-  "bugs": "https://github.com/zsjjs/react-field-mapping/issues",
-  "author": "yanjun",
+  "homepage": "https://git.woa.com/curlsli/wedata-field-mapping",
+  "bugs": "https://git.woa.com/curlsli/wedata-field-mapping",
+  "author": "author",
   "license": "MIT",
   "main": "dist/fieldmapping.js",
-  "repository": "https://github.com/zsjjs/react-field-mapping.git",
+  "repository": "https://git.woa.com/curlsli/wedata-field-mapping",
   "files": [
     "dist",
     "src",

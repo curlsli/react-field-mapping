@@ -1,6 +1,3 @@
-/* @author yanjun.zsj
- * @date 2018.11
-*/
 import './fieldMapping.less';
 import React from 'react';
 import SourceData from './sourceData';
